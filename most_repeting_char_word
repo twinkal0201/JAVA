@@ -1,0 +1,20 @@
+#most repeting char word in list of string
+string_list = ["apple", "banana", "success", "buzz"]
+d = {}
+    # Loop through each word and each character
+for word in string_list:
+    frequency_dict = {}
+
+    for char in word:
+        frequency_dict[char] = frequency_dict.get(char, 0) + 1
+            
+    # Find the key with the maximum value
+    max_char = max(frequency_dict, key=frequency_dict.get)
+    print(max_char)
+    print(frequency_dict.get(max_char))
+    d[word]=frequency_dict.get(max_char)
+ans=max(d.values())
+print(ans)
+
+keys = [k for k, v in d.items() if v == ans]
+print(keys)
